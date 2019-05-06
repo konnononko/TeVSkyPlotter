@@ -4,7 +4,7 @@ ROOT (Cern) macro to create a TeV gamma-ray source catalog plot.
 
 Maybe it is useful for the PhD thesis figure etc.
 
-![](https://github.com/konnononko/TeVSkyPlotter/example/mytevsky.png)
+![](https://github.com/konnononko/TeVSkyPlotter/blob/master/example/mytevsky.png)
 
 
 ## Features
@@ -33,16 +33,17 @@ Here we copy and paste from TeVCat (http://tevcat.uchicago.edu/) table.
 You can prepare your own list if you want.
 
 Copy and paste to copyfromtevcat.txt from TeVCat table selecting "Name", "Ra", "Dec", and "Type".
+Maybe it is good to sort by Type.
 
 ```
 $> cat copyfromtevcat.txt
 
-CTA 1   00 06 26        +72 59 01.0     PWN
-SHBL J001355.9-185406   00 13 52.0      -18 53 29       HBL
-Tycho   00 25 27        +64 10 50       Shell
-KUV 00311-1938  00 33 34.2      -19 21 33       HBL
-1ES 0033+595    00 35 16.8      +59 47 24.0     HBL
-NGC 253 00 47 34.3      -25 17 22.6     Starburst
+IC 310  03 16 43.0      +41 19 29       AGN (unknown type)
+PKS 0625-35     06 26 58.2      -35 29 50       AGN (unknown type)
+OJ 287  08 54 49.1      +20 05 58.89    BL Lac (class unclear)
+HESS J0632+057  06 33 00.8      +05 47 39       Binary
+HESS J1832-093  18 32 50        -09 22 36       Binary
+HESS J1018-589 A        10 18 58        -58 56 43       Binary
 ...
 ```
 
@@ -52,12 +53,13 @@ Then change the list format to be separeted with space-comma-space.
 $> cat copyfromtevcat.txt | sed -e 's/\t/\ \,\ /g' -e 's/$/\ \,/' > copyfromtevcatedit.txt
 $> cat copyfromtevcatedit.txt
 
-CTA 1 , 00 06 26 , +72 59 01.0 , PWN ,
-SHBL J001355.9-185406 , 00 13 52.0 , -18 53 29 , HBL ,
-Tycho , 00 25 27 , +64 10 50 , Shell ,
-KUV 00311-1938 , 00 33 34.2 , -19 21 33 , HBL ,
-1ES 0033+595 , 00 35 16.8 , +59 47 24.0 , HBL ,
-NGC 253 , 00 47 34.3 , -25 17 22.6 , Starburst ,
+IC 310 , 03 16 43.0 , +41 19 29 , AGN (unknown type) ,
+PKS 0625-35 , 06 26 58.2 , -35 29 50 , AGN (unknown type) ,
+OJ 287 , 08 54 49.1 , +20 05 58.89 , BL Lac (class unclear) ,
+HESS J0632+057 , 06 33 00.8 , +05 47 39 , Binary ,
+HESS J1832-093 , 18 32 50 , -09 22 36 , Binary ,
+HESS J1018-589 A , 10 18 58 , -58 56 43 , Binary ,
+...
 ```
 
 
